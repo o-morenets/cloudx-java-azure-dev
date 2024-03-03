@@ -33,9 +33,9 @@ jobs:
       run: echo -n -e "{\"version\":\"${{ github.sha }}\",\"date\":\"$(date '+%m-%d-%Y %H:%M:%S')\"}" > petstore/petstoreapp/src/main/resources/static/content/version.json
     - run: cat petstore/petstoreapp/src/main/resources/static/content/version.json
     - uses: actions/setup-java@v2
-      name: Building Pet Store App with Java 13
+      name: Building Pet Store App with Java 17
       with:
-        java-version: '13'
+        java-version: '17'
         distribution: 'adopt'
     - name: Run Maven build
       run: mvn -f petstore/petstoreapp/pom.xml --batch-mode --update-snapshots verify
