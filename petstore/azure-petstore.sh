@@ -108,7 +108,8 @@ az webapp config appsettings set \
 az webapp deployment slot create \
     --name $APP_EASTUS \
     --resource-group $RG \
-    --slot staging
+    --slot staging \
+    --configuration-source $APP_EASTUS
 
 ##### Enable CI/CD for staging slot #####
 az webapp deployment container config \
